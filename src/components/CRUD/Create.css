@@ -1,0 +1,23 @@
+.create-box {
+    margin: 20px;
+}
+
+.create-form {
+    padding: 10px;
+    margin: 20px;
+}
+
+.create-item {
+    padding: 5px;
+    margin: 10px;
+}
+
+.create-fields {
+    width: 1120px;
+}
+
+.create-button {
+    padding: 5px;
+    margin: 20px;
+    float: right;
+}

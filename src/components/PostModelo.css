@@ -1,0 +1,20 @@
+.label-post{
+    border: 4px;
+    background-color: lightblue;
+    width: 15%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card-postagem {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.card-buttons {
+    display: grid;
+    align-content: center;
+}
+
