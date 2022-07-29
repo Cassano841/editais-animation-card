@@ -1,7 +1,14 @@
 .footer-container{
+    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
     background-color: lightcyan;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
 }

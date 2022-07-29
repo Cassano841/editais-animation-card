@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import "./Create.css";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer"
 
 export default function Create() {
   const [title, setTitulo] = useState("");
@@ -30,15 +31,29 @@ export default function Create() {
   };
 
   const postData = () => {
-    console.log(title);
-    console.log(content);
-    console.log(label);
+    if (title === "" || title == null){
+      alert("É necessário adicionar um título ao edital!")
+      window.location.reload(false);
+
+    }
+    if (content === "" || content == null){
+      alert("É necessário adicionar uma descrição ao edital!")
+      window.location.reload(false);
+
+    }
+    if (label === null) {
+      alert("É necessário adicionar uma categoria ao edital!")
+      window.location.reload(false);
+
+    }
+    if ((title !== "" || content !== "" || label !== null) || (title !== null || content !== null || label !== null)){
     axios.post("http://localhost:5000/api/posts", {
       title,
       content,
       label,
     });
     window.location.reload(false);
+  }
   };
 
   return (
@@ -98,6 +113,7 @@ export default function Create() {
             </Grid>
           </Paper>
         </Box>
+        <Footer/>
       </div>
     </main>
   );
