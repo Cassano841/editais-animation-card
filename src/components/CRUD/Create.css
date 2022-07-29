@@ -21,3 +21,11 @@
     margin: 20px;
     float: right;
 }
+
+
+.create-item-select{
+    width: 100px;
+    display: grid;
+    align-content: center;
+
+}

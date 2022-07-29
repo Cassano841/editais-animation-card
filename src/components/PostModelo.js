@@ -36,7 +36,9 @@ function PostModelo({ post }) {
 
 
   return (
+    //Iníco do código onde monta o card padrão
     <Card sx={{ maxWidth: 345 }}>
+      {/*Início do conteúdo do card, puxando as infos do servidor */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {post.title} 
@@ -48,18 +50,8 @@ function PostModelo({ post }) {
         </Typography>
         <Chip label={post.label} />
       </CardContent>
-      <CardActions>
-        <Button size="small" onClick={Update}>
-        <RiPencilFill/>
-        </Button>
-        <Button size="small" onClick={Delete}>
-        <AiFillDelete/>
-        </Button>
-        <Button size="small" onClick={Favoritar}>
-        <AiFillStar/>
-        </Button>
-      </CardActions>
-      <Button onClick={handleOpen}>Mais Informações</Button>
+      {/*Botão que gera o modal para maior visualização do edital */}
+      <Button onClick={handleOpen} className="card-button-info">Mais Informações</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -75,6 +67,38 @@ function PostModelo({ post }) {
           </Typography>
         </Box>
       </Modal>
+      {/*Fim do código modal do botão Mais Informações*/}
+
+      {/*Início da seção de Edit, Delete e Favorite do card*/}
+      <CardActions>
+        {/*Este botão abre um modal para EDITAR o edital*/}
+        <Button size="small" onClick={handleOpen}>
+        <RiPencilFill/>
+          <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Update/>
+            </Box>
+          </Modal>
+        </Button>
+        {/*Final do código de EDIÇÃO do edital */}
+        
+        {/*Este botão DELETA o edital em questão pelo ID*/}
+        <Button size="small" onClick={(e) => Delete(post._id, e)}>
+        <AiFillDelete/>
+        </Button>
+        {/*Final do código de DELEÇÃO do edital */}
+
+        {/*Este botão favorita o edital e vincula ao usuário*/}
+        {/*EM DESENVOLVIMENTO*/}
+        <Button size="small" onClick={Favoritar}>
+        <AiFillStar/>
+        </Button>
+      </CardActions>
     </Card>
     
   );

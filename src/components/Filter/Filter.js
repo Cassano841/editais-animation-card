@@ -26,17 +26,10 @@ function Filter({ setActiveButton, activeButton, setFiltered, posts }) {
         </Button>
         <Button
           variant="contained"
-          className={activeButton === "editais" ? "active" : ""}
-          onClick={() => setActiveButton("editais")}
+          className={activeButton === "Ensino" ? "active" : ""}
+          onClick={() => setActiveButton("Ensino")}
         >
-          Editais
-        </Button>
-        <Button
-          variant="contained"
-          className={activeButton === "calendario" ? "active" : ""}
-          onClick={() => setActiveButton("calendario")}
-        >
-          Calendário
+          Ensino
         </Button>
         <Button
           variant="contained"
@@ -44,6 +37,13 @@ function Filter({ setActiveButton, activeButton, setFiltered, posts }) {
           onClick={() => setActiveButton("Extensão")}
         >
           Extensão
+        </Button>
+        <Button
+          variant="contained"
+          className={activeButton === "Pesquisa" ? "active" : ""}
+          onClick={() => setActiveButton("Pesquisa")}
+        >
+          Pesquisa
         </Button>
       </Stack>
     </div>

@@ -8,9 +8,16 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import AddCircle from "@mui/icons-material/AddCircle";
 import SearchFilter from "../Filter/SearchFilter";
+import { useNavigate } from "react-router-dom";
 
-export default function PrimarySearchAppBar({search, setSearch}) {
+export default function PrimarySearchAppBar({ search, setSearch }) {
   //const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  const navigateToWatcherHome = () => {
+    navigate("/");
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -20,12 +27,19 @@ export default function PrimarySearchAppBar({search, setSearch}) {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ 
+              display: { 
+                xs: "none", 
+                sm: "block" 
+              },
+            cursor: "pointer"
+            }}
+            onClick={navigateToWatcherHome}
           >
             Watcher
           </Typography>
-          
-          <SearchFilter/>
+
+          <SearchFilter />
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
