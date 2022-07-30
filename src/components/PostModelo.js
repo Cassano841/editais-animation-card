@@ -11,6 +11,7 @@ import {
   Grid,
 } from "@mui/material/";
 import Delete from "./CRUD/Delete";
+import Update from "./CRUD/Update";
 import Favoritar from "./CRUD/Favoritar";
 import { AiFillDelete, AiFillStar } from "react-icons/ai";
 import { RiPencilFill } from "react-icons/ri";
@@ -22,7 +23,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 800,
+  height: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -36,6 +38,7 @@ function PostModelo({ post }) {
 
   return (
     //Iníco do código onde monta o card padrão
+
     <Card sx={{ width: 585 }}>
       {/*Início do conteúdo do card, puxando as infos do servidor */}
       <CardContent>
@@ -76,13 +79,13 @@ function PostModelo({ post }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-title" variant="h4" component="h2">
             {post.title}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" sx={{ mt: 4 }}>
             {post.content}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" sx={{ mt: 4 }}>
             Categoria: {post.label}
           </Typography>
           <Grid container spacing={2}>
@@ -100,7 +103,7 @@ function PostModelo({ post }) {
         {/*Início da seção de Edit, Delete e Favorite do card*/}
         <CardActions>
           {/*Este botão abre um modal para EDITAR o edital*/}
-          <Button size="large" onClick={handleOpen}>
+          <Button size="large" onClick={(e) =>(Update)}>
             <RiPencilFill />
           </Button>
           {/*Final do código de EDIÇÃO do edital */}

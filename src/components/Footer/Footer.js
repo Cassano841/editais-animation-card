@@ -1,9 +1,9 @@
-import './Footer.css'
+import "./Footer.css";
 
-function Footer() {   
+function Footer() {
   return (
     <div className="footer-container">
-     <h4>Plataforma Web em Desenvolvimento</h4>
+      <h4>Plataforma Web em Desenvolvimento</h4>
     </div>
   );
 }

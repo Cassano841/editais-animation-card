@@ -5,7 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Login from "./components/Login/Login";
 import Error404 from "./components/Miscelaneous/Error404/error404";
+import CalendarioLista from "./components/CalendarioLista/CalendarioLista";
+import SignUp from "./components/SignUp/SignUp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,8 +17,11 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/cadastro" element={<Header />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/calendario" element={<CalendarioLista/>}/>
         <Route
-          path="*"
+           path="*"
           element={
             <Error404 />
           }

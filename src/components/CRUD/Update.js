@@ -12,18 +12,11 @@ import {
   FormControl,
 } from "@mui/material";
 import "./Create.css";
-import { useNavigate } from "react-router-dom";
 
 export default function Update() {
   const [title, setTitulo] = useState("");
   const [content, setDescricao] = useState("");
   const [label, setLabel] = useState("");
-
-  const navigate = useNavigate();
-
-  const navigateToWatcherHome = () => {
-    navigate("/");
-  };
 
   const handleChangeLabel = (event) => {
     setLabel(event.target.value);
@@ -79,11 +72,7 @@ export default function Update() {
                 </Grid>
               </FormControl>
               <Grid className="create-item">
-                <Button
-                  variant="contained"
-                  color="warning"
-                  onClick={navigateToWatcherHome}
-                >
+                <Button variant="contained" color="warning">
                   Cancelar
                 </Button>
                 <Button
@@ -92,7 +81,7 @@ export default function Update() {
                   type="submit"
                   onClick={postUpdate}
                 >
-                  Criar
+                  Atualizar
                 </Button>
               </Grid>
             </Grid>

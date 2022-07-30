@@ -27,12 +27,12 @@ export default function PrimarySearchAppBar({ search, setSearch }) {
             variant="h6"
             noWrap
             component="div"
-            sx={{ 
-              display: { 
-                xs: "none", 
-                sm: "block" 
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block",
               },
-            cursor: "pointer"
+              cursor: "pointer",
             }}
             onClick={navigateToWatcherHome}
           >
@@ -57,6 +57,7 @@ export default function PrimarySearchAppBar({ search, setSearch }) {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
+              href="/login"
               size="large"
               edge="end"
               aria-label="account of current user"

@@ -13,11 +13,10 @@ import {
 } from "@mui/material";
 import "./Create.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer"
 
 export default function Create() {
   const [title, setTitulo] = useState("");
-  const [content, setDescricao] = useState("");
+  const [content, setContent] = useState("");
   const [label, setLabel] = useState("");
 
   const navigate = useNavigate();
@@ -75,7 +74,7 @@ export default function Create() {
                   multiline
                   rows={4}
                   placeholder="Descrição"
-                  onChange={(e) => setDescricao(e.target.value)}
+                  onChange={(e) => setContent(e.target.value)}
                 />
               </Grid>
               <FormControl fullWidth>
@@ -93,14 +92,7 @@ export default function Create() {
                   </Select>
                 </Grid>
               </FormControl>
-              <Grid className="create-item">
-                <Button
-                  variant="contained"
-                  color="warning"
-                  onClick={navigateToWatcherHome}
-                >
-                  Cancelar
-                </Button>
+              <Grid className="create-buttons">
                 <Button
                   variant="contained"
                   color="success"
@@ -109,11 +101,17 @@ export default function Create() {
                 >
                   Criar
                 </Button>
+                <Button
+                  variant="contained"
+                  color="warning"
+                  onClick={navigateToWatcherHome}
+                >
+                  Cancelar
+                </Button>
               </Grid>
             </Grid>
           </Paper>
         </Box>
-        <Footer/>
       </div>
     </main>
   );

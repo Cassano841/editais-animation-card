@@ -16,15 +16,17 @@
     width: 1120px;
 }
 
-.create-button {
+.create-buttons {
     padding: 5px;
     margin: 20px;
-    float: right;
 }
 
+.button{
+    margin-left: 50px;
+}
 
 .create-item-select{
-    width: 100px;
+    width: 120px;
     display: grid;
     align-content: center;
 
