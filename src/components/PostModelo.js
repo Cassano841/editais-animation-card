@@ -39,10 +39,10 @@ function PostModelo({ post }) {
   return (
     //Iníco do código onde monta o card padrão
 
-    <Card sx={{ width: 585 }}>
+    <Card sx={{ width: 570, border: '2px solid' }}>
       {/*Início do conteúdo do card, puxando as infos do servidor */}
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{ backgroundColor: "lightgray" }}>
           {post.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
@@ -63,14 +63,14 @@ function PostModelo({ post }) {
       </CardContent>
       {/*Botão que gera o modal para maior visualização do edital */}
       <div className="mais-info">
-        <Button
-          variant="contained"
-          color="success"
-          onClick={handleOpen}
-          className="card-button-info"
-        >
-          Mais Informações
-        </Button>
+          <Button
+            variant="contained"
+            
+            onClick={handleOpen}
+            className="card-button-info"
+          >
+            Mais Informações
+          </Button>
       </div>
       <Modal
         open={open}
@@ -103,7 +103,7 @@ function PostModelo({ post }) {
         {/*Início da seção de Edit, Delete e Favorite do card*/}
         <CardActions>
           {/*Este botão abre um modal para EDITAR o edital*/}
-          <Button size="large" onClick={(e) =>(Update)}>
+          <Button size="large" onClick={(e) => Update}>
             <RiPencilFill />
           </Button>
           {/*Final do código de EDIÇÃO do edital */}

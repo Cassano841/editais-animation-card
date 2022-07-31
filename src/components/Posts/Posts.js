@@ -4,6 +4,7 @@ import PostModelo from "../PostModelo";
 import { motion } from "framer-motion";
 import { CircularProgress, Grid } from "@mui/material";
 import Filter from "../Filter/Filter";
+import Navbar from "../Navbar/Navbar";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,6 @@ function Posts() {
   const [activeButton, setActiveButton] = useState("all");
   const [setSearch] = useState("");
   //const [search, setSearch] = useState(""); <<== Revisar e utilizar este
-  
 
   const fetchPosts = async () => {
     const response = await fetch("http://localhost:5000/api/posts");
@@ -26,6 +26,7 @@ function Posts() {
 
   return (
     <div>
+      <Navbar />
       <Filter
         posts={posts}
         setFiltered={setFiltered}

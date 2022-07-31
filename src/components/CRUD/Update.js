@@ -26,7 +26,7 @@ export default function Update() {
     console.log(title);
     console.log(content);
     console.log(label);
-    axios.put("http://localhost:5000/api/posts", {
+    axios.put(`http://localhost:5000/api/posts/{$id}`, {
       title,
       content,
       label,

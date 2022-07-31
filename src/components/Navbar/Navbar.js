@@ -7,8 +7,21 @@ import Typography from "@mui/material/Typography";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import AddCircle from "@mui/icons-material/AddCircle";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SearchFilter from "../Filter/SearchFilter";
 import { useNavigate } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Chip } from "@mui/material";
+import EventIcon from '@mui/icons-material/Event';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#1976d2",
+    },
+  },
+});
 
 export default function PrimarySearchAppBar({ search, setSearch }) {
   //const [search, setSearch] = useState("");
@@ -21,64 +34,94 @@ export default function PrimarySearchAppBar({ search, setSearch }) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              display: {
-                xs: "none",
-                sm: "block",
-              },
-              cursor: "pointer",
-            }}
-            onClick={navigateToWatcherHome}
-          >
-            Watcher
-          </Typography>
+      <ThemeProvider theme={darkTheme}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                display: {
+                  xs: "none",
+                  sm: "block",
+                },
+                cursor: "pointer",
+              }}
+              onClick={navigateToWatcherHome}
+            >
+              Watcher
+            </Typography>
 
-          <SearchFilter />
+            <SearchFilter />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              href="/cadastro"
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              color="inherit"
-              alt="Criar novo edital"
-            >
-              <AddCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              href="/login"
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                href="/cadastro"
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                color="inherit"
+                alt="Criar novo edital"
+              >
+                <Chip icon={<AddCircle />} label="Criar novo Edital"/>
+              </IconButton>
+            </Box>
+            <Box>
+              <IconButton
+                href="/editais"
+                size="large"
+                edge="end"
+                arial-label="Acesso editais"
+                aria-haspopup="true"
+                color="inherit"
+                alt="Acessar Editais"
+                label="Acessar Editais"
+              >
+                <Chip icon={<CalendarMonthIcon />} label="Acessar Editais" />
+              </IconButton>
+            </Box>
+            <Box>
+              <IconButton
+                href="/calendario"
+                size="large"
+                edge="end"
+                arial-label="Acesso editais"
+                aria-haspopup="true"
+                color="inherit"
+                alt="Acessar Editais"
+                label="Acessar Editais"
+              >
+                <Chip icon={<EventIcon />} label="Acessar Calendário Acad." />
+              </IconButton>
+            </Box>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                href="/login"
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </ThemeProvider>
     </Box>
   );
 }

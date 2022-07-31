@@ -9,6 +9,8 @@ import Login from "./components/Login/Login";
 import Error404 from "./components/Miscelaneous/Error404/error404";
 import CalendarioLista from "./components/CalendarioLista/CalendarioLista";
 import SignUp from "./components/SignUp/SignUp";
+import Inicial from "./components/Inicial/Inicial";
+import Posts from "./components/Posts/Posts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +22,8 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/calendario" element={<CalendarioLista/>}/>
+        <Route path="/inicial" element={<Inicial/>}/>
+        <Route path="/editais" element={<Posts/>}/>
         <Route
            path="*"
           element={

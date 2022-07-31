@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 80px;
-    background-color: lightcyan;
+    background-color: #121212;
+    color: white;
 
     position: static;
     left: 0;
