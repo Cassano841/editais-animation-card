@@ -30,22 +30,10 @@ export default function Create() {
   };
 
   const postData = () => {
-    if (title === "" || title == null){
-      alert("É necessário adicionar um título ao edital!")
+    if (!title || !content || !label){
+      alert("É necessário preencher todos os campos para criação do edital!")
       window.location.reload(false);
-
-    }
-    if (content === "" || content == null){
-      alert("É necessário adicionar uma descrição ao edital!")
-      window.location.reload(false);
-
-    }
-    if (label === null) {
-      alert("É necessário adicionar uma categoria ao edital!")
-      window.location.reload(false);
-
-    }
-    if ((title !== "" || content !== "" || label !== null) || (title !== null || content !== null || label !== null)){
+    } else {
     axios.post("http://localhost:5000/api/posts", {
       title,
       content,

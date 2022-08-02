@@ -4,6 +4,7 @@ import "./CalendarioLista.css";
 import Agosto from "../OrganizacaoAgenda/Agosto";
 import Setembro from "../OrganizacaoAgenda/Setembro";
 import Outubro from "../OrganizacaoAgenda/Outubro";
+import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
 
 
 function CalendarioLista () {
@@ -11,6 +12,7 @@ function CalendarioLista () {
         <>
         <navbar>
             <Navbar/>
+            <InConstruction />
         </navbar>
         <main className="calendario-listagem">
             <Agosto/>

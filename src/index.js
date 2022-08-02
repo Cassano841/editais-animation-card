@@ -11,6 +11,7 @@ import CalendarioLista from "./components/CalendarioLista/CalendarioLista";
 import SignUp from "./components/SignUp/SignUp";
 import Inicial from "./components/Inicial/Inicial";
 import Posts from "./components/Posts/Posts";
+import FAQ from "./components/Inicial/FAQ";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,7 @@ root.render(
         <Route path="/calendario" element={<CalendarioLista/>}/>
         <Route path="/inicial" element={<Inicial/>}/>
         <Route path="/editais" element={<Posts/>}/>
+        <Route path="/faq" element={<FAQ/>}/>
         <Route
            path="*"
           element={

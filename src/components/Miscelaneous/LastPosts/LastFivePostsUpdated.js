@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import moment from "moment";
-import InQA from "../InQA/InQA";
+import InConstruction from "../InConstruction/InConstruction";
 
-function LastFivePosts() {
+function LastFivePostsUpdated() {
   const [posts, setPosts] = useState([]);
 
   const fetchLastFivePosts = async () => {
@@ -35,9 +35,9 @@ function LastFivePosts() {
               margin: 5,
             }}
           >
-            <InQA/>
+            <InConstruction />
             <Box>
-              <Typography variant="h5">Últimos 5 Ediais Publicados</Typography>
+              <Typography variant="h5">Últimos 5 Ediais Atualizados</Typography>
             </Box>
             <Box>
               <Grid>
@@ -85,4 +85,4 @@ function LastFivePosts() {
   );
 }
 
-export default LastFivePosts;
+export default LastFivePostsUpdated;

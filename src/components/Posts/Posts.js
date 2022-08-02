@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { CircularProgress, Grid } from "@mui/material";
 import Filter from "../Filter/Filter";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -25,8 +27,10 @@ function Posts() {
   }, []);
 
   return (
+    <>
     <div>
       <Navbar />
+      <InConstruction/>
       <Filter
         posts={posts}
         setFiltered={setFiltered}
@@ -52,6 +56,10 @@ function Posts() {
         </motion.div>
       )}
     </div>
+    <footer>
+      <Footer/>
+    </footer>
+    </>
   );
 }
 

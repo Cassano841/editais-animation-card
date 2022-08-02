@@ -12,12 +12,14 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import "./Login.css";
+import InQA from "../Miscelaneous/InQA/InQA";
 
 function Login() {
   return (
     <>
       <header>
         <Navbar />
+        <InQA />
       </header>
       <div className="login">
           <div>
