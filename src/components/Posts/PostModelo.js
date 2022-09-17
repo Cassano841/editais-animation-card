@@ -10,9 +10,9 @@ import {
   Box,
   Grid,
 } from "@mui/material/";
-import Delete from "./CRUD/Delete";
-import Update from "./CRUD/Update";
-import Favoritar from "./CRUD/Favoritar";
+import Delete from "../CRUD/Delete";
+import Update from "../CRUD/Update";
+import Favoritar from "../CRUD/Favoritar";
 import { AiFillDelete, AiFillStar } from "react-icons/ai";
 import { RiPencilFill } from "react-icons/ri";
 import { useState } from "react";

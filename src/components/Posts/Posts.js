@@ -1,6 +1,6 @@
 import "../../App.css";
 import { useEffect, useState } from "react";
-import PostModelo from "../PostModelo";
+import PostModelo from "./PostModelo";
 import { motion } from "framer-motion";
 import { CircularProgress, Grid } from "@mui/material";
 import Filter from "../Filter/Filter";
@@ -16,7 +16,7 @@ function Posts() {
   //const [search, setSearch] = useState(""); <<== Revisar e utilizar este
 
   const fetchPosts = async () => {
-    const response = await fetch("http://localhost:5000/api/posts");
+    const response = await fetch("http://localhost:5000/api/editais");
     const data = await response.json();
     setPosts(data);
     //setFiltered(data);
