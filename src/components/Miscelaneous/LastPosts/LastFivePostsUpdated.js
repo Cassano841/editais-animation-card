@@ -16,7 +16,7 @@ function LastFivePostsUpdated() {
 
   const fetchLastFivePosts = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/posts/lastFivePosts"
+      "http://localhost:5000/api/editais/lastFivePosts"
     );
     const data = await response.json();
     setPosts(data);
