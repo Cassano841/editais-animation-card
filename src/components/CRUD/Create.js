@@ -10,6 +10,7 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
+  Checkbox
 } from "@mui/material";
 import "./Create.css";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,7 @@ export default function Create() {
   const [title, setTitulo] = useState("");
   const [content, setContent] = useState("");
   const [label, setLabel] = useState("");
+  const [checked, setChecked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -29,18 +31,23 @@ export default function Create() {
     setLabel(event.target.value);
   };
 
+  const handleChangeCheck = (event) => {
+    setChecked(event.target.checked);
+  }
+
   const postData = () => {
-    if (!title || !content || !label){
+    if (!title || !content || !label) {
       alert("É necessário preencher todos os campos para criação do edital!")
       window.location.reload(false);
     } else {
-    axios.post("http://localhost:5000/api/editais", {
-      title,
-      content,
-      label,
-    });
-    window.location.reload(false);
-  }
+      axios.post("http://localhost:5000/api/editais", {
+        title,
+        content,
+        label,
+        checked,
+      });
+      window.location.reload(false);
+    }
   };
 
   return (
@@ -78,6 +85,17 @@ export default function Create() {
                     <MenuItem value={"Extensão"}>Extensão</MenuItem>
                     <MenuItem value={"Pesquisa"}>Pesquisa</MenuItem>
                   </Select>
+                </Grid>
+              </FormControl>
+              <FormControl fullWidth>
+                <Grid className="create-item">
+                  <InputLabel>Destaque?</InputLabel>
+                  <InputLabel></InputLabel>
+                  <Checkbox
+                    checked={checked}
+                    onChange={handleChangeCheck}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
                 </Grid>
               </FormControl>
               <Grid className="create-buttons">

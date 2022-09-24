@@ -5,6 +5,7 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
 import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
+import Destaques from "../Miscelaneous/LastPosts/Destaques";
 
 function Inicial() {
   return (
@@ -55,6 +56,9 @@ function Inicial() {
             </Typography>
           </Box>
         </Container>
+        
+        <Destaques/>
+
         <Grid container spacing={2}>
           <Grid item xs={4}>
             <Box>
