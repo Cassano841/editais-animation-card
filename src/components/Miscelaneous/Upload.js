@@ -1,28 +1,33 @@
 import axios from "axios";
+import { useRef } from "react";
 
 function Upload() {
 
-    const handleFileChange = (e) => {
-        this.setState ({
-            selectedFile: e.target.files[0]
-        });
-    };
+    const fileElement = useRef(null);
 
     const handleUpload = (e) => {
         e.preventDefault();
-        const data = new FormData();
-        data.append('file', this.state.selectedFile);
-        axios.post(data)
-            .then((res) => {
-                console.log(res.statusText);
-            })
+        const dataForm = new FormData();
+        for (const file of fileElement.current.files) {
+            dataForm.append('file', file);
+        }
+        if (fileElement === null) {
+            alert("Carregar arquivo antes de realizar o upload");
+        } else {
+            axios.post("http://localhost:5000/uploadjson", dataForm)
+                .then((res) => {
+                    console.log(res.statusText);
+                })
+            window.location.reload(false);
+        }
+
     }
 
     return (
         <div>
             <div className="header-titulo">
                 <form>
-                    <input type={"file"} name="file" onChange={handleFileChange}/>
+                    <input type={"file"} name="file" ref={fileElement} />
                     <button onClick={handleUpload}>Upload</button>
                 </form>
 

@@ -55,11 +55,11 @@ function LastFivePosts() {
                             <Grid item xs={4}>
                               <p className="creationDate">
                                 Publicado em:{" "}
-                                {moment(posts.date).format("DD-MM-YYYY HH:mm")}
+                                {moment(posts.created).format("DD-MM-YYYY HH:mm")}
                               </p>
                               <p className="creationDate">
                                 Atualizado em:{" "}
-                                {moment(posts.date).format("DD-MM-YYYY HH:mm")}
+                                {moment(posts.updated).format("DD-MM-YYYY HH:mm")}
                               </p>
                             </Grid>
                             <Grid item xs={4} color="green" fontWeight={"bold"}>

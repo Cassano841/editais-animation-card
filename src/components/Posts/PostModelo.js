@@ -53,7 +53,10 @@ function PostModelo({ post }) {
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <p className="creationDate">
-              Publicado em: {moment(post.date).format("DD-MM-YYYY HH:mm")}
+              Publicado em: {moment(post.created).format("DD-MM-YYYY HH:mm")}
+            </p>
+            <p className="creationDate">
+              Atualizado em: {moment(post.updated).format("DD-MM-YYYY HH:mm")}
             </p>
           </Grid>
           <Grid item xs={4}>
@@ -63,14 +66,14 @@ function PostModelo({ post }) {
       </CardContent>
       {/*Botão que gera o modal para maior visualização do edital */}
       <div className="mais-info">
-          <Button
-            variant="contained"
-            
-            onClick={handleOpen}
-            className="card-button-info"
-          >
-            Mais Informações
-          </Button>
+        <Button
+          variant="contained"
+
+          onClick={handleOpen}
+          className="card-button-info"
+        >
+          Mais Informações
+        </Button>
       </div>
       <Modal
         open={open}
@@ -90,12 +93,34 @@ function PostModelo({ post }) {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              Publicado em: {moment(post.date).format("DD-MM-YYYY HH:mm")}
+              Atualizado em: {moment(post.updated).format("DD-MM-YYYY HH:mm")}
             </Grid>
             <Grid item xs={4}>
               Status: Vigente
             </Grid>
           </Grid>
+          <br></br>
+          <Box>
+            <Typography id="modal-modal-title" variant="h6" component="h6">
+              Etapas do Processo
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={8}>
+                Primeira Etapa: {post.etapas.primeiraEtapa}
+              </Grid>
+              <Grid item xs={8}>
+                Segunda Etapa: {moment(post.etapas.segundaEtapa).format("DD-MM-YYYY")}
+              </Grid>
+              <Grid item xs={8}>
+                Terceira Etapa: {moment(post.etapas.terceiraEtapa).format("DD-MM-YYYY")}
+              </Grid>
+              <Grid item xs={8}>
+                Quarta Etapa: {moment(post.etapas.quartaEtapa).format("DD-MM-YYYY")}
+              </Grid>
+            </Grid>
+          </Box>
+
+
         </Box>
       </Modal>
       {/*Fim do código modal do botão Mais Informações*/}
