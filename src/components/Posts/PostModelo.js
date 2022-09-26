@@ -24,7 +24,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 800,
-  height: 400,
+  height: 500,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -104,23 +104,34 @@ function PostModelo({ post }) {
             <Typography id="modal-modal-title" variant="h6" component="h6">
               Etapas do Processo
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={8}>
-                Primeira Etapa: {post.etapas.primeiraEtapa}
+            <br></br>
+            <Grid container spacing={2} >
+              <Grid item xs={6} sx={{border: 1}}>
+                Primeira Etapa: {post.etapas.map(etapa =>
+                  <>
+                  <div>{moment(etapa.primeiraEtapa.data).format("DD-MM-YYYY")}</div>
+                  <div>{etapa.primeiraEtapa.nome}</div>
+                </>
+                )}
               </Grid>
-              <Grid item xs={8}>
-                Segunda Etapa: {moment(post.etapas.segundaEtapa).format("DD-MM-YYYY")}
+              <Grid item xs={6} sx={{border: 1}}>
+                Segunda Etapa: {post.etapas.map(etapa =>
+                  <>
+                  <div>{moment(etapa.segundaEtapa.data).format("DD-MM-YYYY")}</div>
+                  <div>{etapa.segundaEtapa.nome}</div>
+                </>
+                )}
               </Grid>
-              <Grid item xs={8}>
-                Terceira Etapa: {moment(post.etapas.terceiraEtapa).format("DD-MM-YYYY")}
-              </Grid>
-              <Grid item xs={8}>
-                Quarta Etapa: {moment(post.etapas.quartaEtapa).format("DD-MM-YYYY")}
+              <Grid item xs={6} sx={{border: 1}}>
+                Terceira Etapa: {post.etapas.map(etapa =>
+                  <>
+                    <div>{moment(etapa.terceiraEtapa.data).format("DD-MM-YYYY")}</div>
+                    <div>{etapa.terceiraEtapa.nome}</div>
+                  </>
+                )}
               </Grid>
             </Grid>
           </Box>
-
-
         </Box>
       </Modal>
       {/*Fim do código modal do botão Mais Informações*/}
