@@ -34,8 +34,15 @@ function Destaques() {
             <Box>
               <Typography variant="h5">Editais em Destaque</Typography>
             </Box>
+            <br />
             <Box>
-              <Grid>
+              <Grid
+                container
+                spacing={1}
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+              >
                 {editais.map((editais) => (
                   <PostModelo key={editais._id} post={editais} />
                 ))}

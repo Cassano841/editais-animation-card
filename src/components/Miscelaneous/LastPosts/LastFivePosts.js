@@ -35,7 +35,7 @@ function LastFivePosts() {
               margin: 5,
             }}
           >
-            <InQA/>
+            <InQA />
             <Box>
               <Typography variant="h5">Últimos 5 Ediais Publicados</Typography>
             </Box>
@@ -45,6 +45,7 @@ function LastFivePosts() {
                   <Grid>
                     <Card
                       sx={{ maxWidth: 600, margin: "5px", border: "2px solid" }}
+                      
                     >
                       <CardActionArea>
                         <CardContent>

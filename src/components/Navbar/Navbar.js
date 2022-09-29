@@ -23,8 +23,7 @@ const darkTheme = createTheme({
   },
 });
 
-export default function PrimarySearchAppBar({ search, setSearch }) {
-  //const [search, setSearch] = useState("");
+export default function PrimarySearchAppBar() {
 
   const navigate = useNavigate();
 
@@ -65,7 +64,7 @@ export default function PrimarySearchAppBar({ search, setSearch }) {
                 color="inherit"
                 alt="Criar novo edital"
               >
-                <Chip icon={<AddCircle />} label="Criar novo Edital"/>
+                <Chip icon={<AddCircle />} label="Criação de Editais"/>
               </IconButton>
             </Box>
             <Box>
@@ -87,11 +86,11 @@ export default function PrimarySearchAppBar({ search, setSearch }) {
                 href="/calendario"
                 size="large"
                 edge="end"
-                arial-label="Acesso editais"
+                arial-label="Acesso calendário"
                 aria-haspopup="true"
                 color="inherit"
-                alt="Acessar Editais"
-                label="Acessar Editais"
+                alt="Acessar Calendário"
+                label="Acessar Calendário"
               >
                 <Chip icon={<EventIcon />} label="Acessar Calendário Acad." />
               </IconButton>

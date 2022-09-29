@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import LastFivePosts from "../Miscelaneous/LastPosts/LastFivePosts";
 
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
 import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
@@ -23,7 +23,7 @@ function Inicial() {
           <Box
             sx={{
               width: "fixed",
-              height: 300,
+              height: 200,
               backgroundColor: "lightgray",
               borderRadius: 2,
               padding: 5,
@@ -43,15 +43,7 @@ function Inicial() {
               acadêmico e também aos editais de Ensino, Extensão e Pesquisa que
               acontecem ao longo do ano no Instituto.
             </Typography>
-            <Typography align="center">
-              <Button
-                href="/faq"
-                variant="contained" 
-                size="large">
-                FAQ
-              </Button>
-            </Typography>
-            <Typography variant="subtitle2" align="right" margin={10}>
+            <Typography variant="subtitle2" align="right" margin={5}>
               Autor/Desenvolvedor: Nícholas Cassano B.
             </Typography>
           </Box>

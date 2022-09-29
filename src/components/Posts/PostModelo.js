@@ -10,13 +10,11 @@ import {
   Box,
   Grid,
 } from "@mui/material/";
-import Delete from "../CRUD/Delete";
-import Update from "../CRUD/Update";
 import Favoritar from "../CRUD/Favoritar";
-import { AiFillDelete, AiFillStar } from "react-icons/ai";
-import { RiPencilFill } from "react-icons/ri";
+import { AiFillStar } from "react-icons/ai";
 import { useState } from "react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -68,11 +66,10 @@ function PostModelo({ post }) {
       <div className="mais-info">
         <Button
           variant="contained"
-
           onClick={handleOpen}
           className="card-button-info"
         >
-          Mais Informações
+          Ver Mais
         </Button>
       </div>
       <Modal
@@ -105,51 +102,40 @@ function PostModelo({ post }) {
               Etapas do Processo
             </Typography>
             <br></br>
-            <Grid container spacing={2} >
-              <Grid item xs={6} sx={{border: 1}}>
-                Primeira Etapa: {post.etapas.map(etapa =>
+            <Grid>
+              <Grid>
+                {post.etapas.map(etapa =>
                   <>
-                  <div>{moment(etapa.primeiraEtapa.data).format("DD-MM-YYYY")}</div>
-                  <div>{etapa.primeiraEtapa.nome}</div>
-                </>
-                )}
-              </Grid>
-              <Grid item xs={6} sx={{border: 1}}>
-                Segunda Etapa: {post.etapas.map(etapa =>
-                  <>
-                  <div>{moment(etapa.segundaEtapa.data).format("DD-MM-YYYY")}</div>
-                  <div>{etapa.segundaEtapa.nome}</div>
-                </>
-                )}
-              </Grid>
-              <Grid item xs={6} sx={{border: 1}}>
-                Terceira Etapa: {post.etapas.map(etapa =>
-                  <>
-                    <div>{moment(etapa.terceiraEtapa.data).format("DD-MM-YYYY")}</div>
-                    <div>{etapa.terceiraEtapa.nome}</div>
+                    <div>{moment(etapa.primeiraEtapa.data).format("DD-MM-YYYY")} - {etapa.primeiraEtapa.nome}</div>
+                    <br />
+                    <div>{moment(etapa.segundaEtapa.data).format("DD-MM-YYYY")} - {etapa.segundaEtapa.nome}</div>
+                    <br />
+                    <div>{moment(etapa.terceiraEtapa.data).format("DD-MM-YYYY")} - {etapa.terceiraEtapa.nome}</div>
                   </>
                 )}
               </Grid>
             </Grid>
+            <br></br>
+            <Box className="mais-info">
+              <Link
+                key={post._id}
+                to={{
+                  pathname: `/editais/${post._id}`
+                }}
+              >
+                <Button variant="contained">
+                  Mais Informações
+                </Button>
+              </Link>
+            </Box>
           </Box>
+
         </Box>
       </Modal>
       {/*Fim do código modal do botão Mais Informações*/}
       <div className="card-buttons">
         {/*Início da seção de Edit, Delete e Favorite do card*/}
         <CardActions>
-          {/*Este botão abre um modal para EDITAR o edital*/}
-          <Button size="large" onClick={(e) => Update}>
-            <RiPencilFill />
-          </Button>
-          {/*Final do código de EDIÇÃO do edital */}
-
-          {/*Este botão DELETA o edital em questão pelo ID*/}
-          <Button size="large" onClick={(e) => Delete(post._id, e)}>
-            <AiFillDelete />
-          </Button>
-          {/*Final do código de DELEÇÃO do edital */}
-
           {/*Este botão favorita o edital e vincula ao usuário*/}
           {/*EM DESENVOLVIMENTO*/}
           <Button size="large" onClick={Favoritar}>
