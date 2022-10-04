@@ -10,7 +10,7 @@ import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
-  const [filtered, setFiltered] = useState([]);
+  const [filtered,  setFiltered] = useState([]);
   const [activeButton, setActiveButton] = useState("all");
   const [setSearch] = useState("");
   //const [search, setSearch] = useState(""); <<== Revisar e utilizar este

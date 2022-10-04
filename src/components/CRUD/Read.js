@@ -17,6 +17,7 @@ import {
     Box,
     Grid
 } from "@mui/material";
+import "./Read.css";
 
 function Read() {
     const [edital, setEdital] = useState([]);
@@ -72,8 +73,31 @@ function Read() {
                                         </Typography>
                                         <br></br>
                                         <Grid>
-                                        
-                                            
+                                            <Grid>
+                                                {edital.etapas?.map(etapa =>
+                                                    <>
+                                                        <table>
+                                                            <tr>
+                                                                <th>Data</th>
+                                                                <th>Detalhe</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>{moment(etapa.primeiraEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td> {etapa.primeiraEtapa.nome}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>{moment(etapa.segundaEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td> {etapa.segundaEtapa.nome}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>{moment(etapa.terceiraEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td> {etapa.terceiraEtapa.nome}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </>
+                                                )}
+                                            </Grid>
+
                                         </Grid>
                                     </Box>
                                 </Box>

@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import moment from "moment";
-import InConstruction from "../InConstruction/InConstruction";
 
 function LastFivePostsUpdated() {
   const [posts, setPosts] = useState([]);
@@ -35,7 +34,6 @@ function LastFivePostsUpdated() {
               margin: 5,
             }}
           >
-            <InConstruction />
             <Box>
               <Typography variant="h5">Últimos 5 Ediais Atualizados</Typography>
             </Box>
