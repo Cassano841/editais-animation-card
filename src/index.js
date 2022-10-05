@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Header from "./components/Header/Header";
+import CadastroEditais from "./components/Cadastros/CadastroEditais";
 import Login from "./components/Login/Login";
 import Error404 from "./components/Miscelaneous/Error404/error404";
 import CalendarioLista from "./components/CalendarioLista/CalendarioLista";
@@ -21,7 +21,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/cadastro" element={<Header />} />
+        <Route path="/cadastro" element={<CadastroEditais />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/calendario" element={<CalendarioLista/>}/>

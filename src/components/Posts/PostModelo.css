@@ -1,8 +1,8 @@
 .posts-list {
     display: flex;
     padding: 10px;
-    
-  }
+
+}
 
 .card-postagem {
     border-style: solid;
@@ -17,16 +17,21 @@
 }
 
 .card-button-info {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.creationDate{
+.creationDate {
     font-size: 12px;
 }
 
 .mais-info {
     text-align: center;
+}
+
+.conteudo {
+    min-height: 100vh;
+
 }

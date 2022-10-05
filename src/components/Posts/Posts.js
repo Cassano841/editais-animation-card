@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PostModelo from "./PostModelo";
 import { motion } from "framer-motion";
 import { CircularProgress, Grid } from "@mui/material";
-import Filter from "../Filter/Filter";
+import FilterEdital from "../Filter/FilterEdital";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
@@ -28,10 +28,10 @@ function Posts() {
 
   return (
     <>
-    <div>
+    <div className="conteudo">
       <Navbar />
       <InConstruction/>
-      <Filter
+      <FilterEdital
         posts={posts}
         setFiltered={setFiltered}
         activeButton={activeButton}

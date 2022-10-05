@@ -21,8 +21,6 @@ import "./Read.css";
 
 function Read() {
     const [edital, setEdital] = useState([]);
-
-
     const { id } = useParams();
     const fetchEdital = async () => {
         const response = await fetch(`http://localhost:5000/api/editais/${id}`);
@@ -43,7 +41,6 @@ function Read() {
                 <Box>
                     <Grid>
                         <Card>
-                            {/*Início do conteúdo do card, puxando as infos do servidor */}
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div" sx={{ backgroundColor: "lightgray" }}>
                                     {edital.title}
@@ -102,26 +99,15 @@ function Read() {
                                     </Box>
                                 </Box>
                             </CardContent>
-
-                            {/*Fim do código modal do botão Mais Informações*/}
                             <div className="card-buttons">
-                                {/*Início da seção de Edit, Delete e Favorite do card*/}
                                 <CardActions>
-                                    {/*Este botão abre um modal para EDITAR o edital*/}
                                     <Button size="large" onClick={(e) => Update(e)}>
                                         <RiPencilFill />
                                     </Button>
-                                    {/*Final do código de EDIÇÃO do edital */}
-
-                                    {/*Este botão DELETA o edital em questão pelo ID*/}
                                     <Button size="large" onClick={(e) => Delete(edital._id, e)}>
                                         <AiFillDelete />
                                     </Button>
-                                    {/*Final do código de DELEÇÃO do edital */}
-
-                                    {/*Este botão favorita o edital e vincula ao usuário*/}
-                                    {/*EM DESENVOLVIMENTO*/}
-                                    <Button size="large" onClick={Favoritar}>
+                                    <Button size="large" onClick={(e) => Favoritar(edital._id, e)}>
                                         <AiFillStar />
                                     </Button>
                                 </CardActions>

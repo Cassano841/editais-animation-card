@@ -1,66 +1,37 @@
-import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Filter.css";
+import { useState } from "react";
+import { IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-function SearchFilter({search, setSearch}) {
 
-    const Search = styled("div")(({ theme }) => ({
-        position: "relative",
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        "&:hover": {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing(2),
-        marginLeft: 0,
-        width: "100%",
-        [theme.breakpoints.up("sm")]: {
-          marginLeft: theme.spacing(3),
-          width: "auto",
-        },
-      }));
-      
-      const SearchIconWrapper = styled("div")(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: "100%",
-        position: "absolute",
-        pointerEvents: "none",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }));
-      
-      const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: "inherit",
-        "& .MuiInputBase-input": {
-          padding: theme.spacing(1, 1, 1, 0),
-          // vertical padding + font size from searchIcon
-          paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-          transition: theme.transitions.create("width"),
-          width: "100%",
-          [theme.breakpoints.up("md")]: {
-            width: "100ch",
-          },
-        },
-      }));
+function SearchFilter() {
+  const [search, setSearch] = useState();
+  console.log(search);
+  const navigate = useNavigate();
 
-    return (
-        <div className="filter-search">
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Pesquisar"
-              inputProps={{ "aria-label": "search" }}
-              value={search} 
-              onChange={(e) => {setSearch(e.target.value)}}
-              
-            />
-          </Search>
-        </div>
-      );
+
+  const handleEnter = (event) => {
+    if (event.key === 'Enter') {
+      console.log(search);
+      navigate(`/calendario?${search}`);
     }
+  };
+
+  return (
+    <div className="filter-search">
+      <IconButton type="button" sx={{ p: '12px' }} aria-label="search">
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 , width: 800}}
+        placeholder="Pesquisar"
+        onInput={(e) => setSearch(e.target.value)}
+        onKeyDown={handleEnter}
+      />
+    </div>
+  );
+}
 
 export default SearchFilter;

@@ -35,10 +35,7 @@ function PostModelo({ post }) {
   const handleClose = () => setOpen(false);
 
   return (
-    //Iníco do código onde monta o card padrão
-
     <Card sx={{ width: 570, border: '2px solid' }}>
-      {/*Início do conteúdo do card, puxando as infos do servidor */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{ backgroundColor: "lightgray" }}>
           {post.title}
@@ -62,7 +59,6 @@ function PostModelo({ post }) {
           </Grid>
         </Grid>
       </CardContent>
-      {/*Botão que gera o modal para maior visualização do edital */}
       <div className="mais-info">
         <Button
           variant="contained"
@@ -129,16 +125,11 @@ function PostModelo({ post }) {
               </Link>
             </Box>
           </Box>
-
         </Box>
       </Modal>
-      {/*Fim do código modal do botão Mais Informações*/}
       <div className="card-buttons">
-        {/*Início da seção de Edit, Delete e Favorite do card*/}
         <CardActions>
-          {/*Este botão favorita o edital e vincula ao usuário*/}
-          {/*EM DESENVOLVIMENTO*/}
-          <Button size="large" onClick={Favoritar}>
+          <Button size="large" onClick={(e) => Favoritar(post._id, e)}>
             <AiFillStar />
           </Button>
         </CardActions>

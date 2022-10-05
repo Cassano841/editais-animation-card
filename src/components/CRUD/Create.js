@@ -10,7 +10,8 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
-  Checkbox
+  Checkbox,
+  FormControlLabel
 } from "@mui/material";
 import "./Create.css";
 import { useNavigate } from "react-router-dom";
@@ -89,12 +90,16 @@ export default function Create() {
               </FormControl>
               <FormControl fullWidth>
                 <Grid className="create-item">
-                  <InputLabel>Destaque?</InputLabel>
-                  <InputLabel></InputLabel>
-                  <Checkbox
-                    checked={checked}
-                    onChange={handleChangeCheck}
-                    inputProps={{ 'aria-label': 'controlled' }}
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        value="remember"
+                        color="primary"
+                        checked={checked}
+                        onChange={handleChangeCheck}
+                        inputProps={{ 'aria-label': 'controlled' }} 
+                    />}
+                    label="Destaque"
                   />
                 </Grid>
               </FormControl>

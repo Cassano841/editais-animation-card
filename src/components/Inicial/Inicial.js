@@ -1,11 +1,10 @@
 import Navbar from "../Navbar/Navbar";
 import LastFivePosts from "../Miscelaneous/LastPosts/LastFivePosts";
-
+import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
+import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
+import Destaques from "../Miscelaneous/LastPosts/Destaques";
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
-import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
-import Destaques from "../Miscelaneous/LastPosts/Destaques";
 
 function Inicial() {
   return (
@@ -13,7 +12,7 @@ function Inicial() {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="conteudo">
         <Container
           maxWidth="lg"
           sx={{
@@ -48,8 +47,8 @@ function Inicial() {
             </Typography>
           </Box>
         </Container>
-        
-        <Destaques/>
+
+        <Destaques />
 
         <Grid container spacing={2}>
           <Grid item xs={4}>
