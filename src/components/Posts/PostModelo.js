@@ -48,10 +48,10 @@ function PostModelo({ post }) {
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <p className="creationDate">
-              Publicado em: {moment(post.created).format("DD-MM-YYYY HH:mm")}
+              Publicado em: {moment(post.created_at).format("DD-MM-YYYY HH:mm")}
             </p>
             <p className="creationDate">
-              Atualizado em: {moment(post.updated).format("DD-MM-YYYY HH:mm")}
+              Atualizado em: {moment(post.updated_at).format("DD-MM-YYYY HH:mm")}
             </p>
           </Grid>
           <Grid item xs={4}>
@@ -86,7 +86,7 @@ function PostModelo({ post }) {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              Atualizado em: {moment(post.updated).format("DD-MM-YYYY HH:mm")}
+              Atualizado em: {moment(post.updated_at).format("DD-MM-YYYY HH:mm")}
             </Grid>
             <Grid item xs={4}>
               Status: Vigente

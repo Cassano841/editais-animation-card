@@ -15,7 +15,7 @@ function LastFivePosts() {
 
   const fetchLastFivePosts = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/editais/lastFivePosts"
+      "http://localhost:5000/api/editais/lastFivePostsCreated"
     );
     const data = await response.json();
     setPosts(data);
@@ -54,11 +54,11 @@ function LastFivePosts() {
                             <Grid item xs={4}>
                               <p className="creationDate">
                                 Publicado em:{" "}
-                                {moment(posts.created).format("DD-MM-YYYY HH:mm")}
+                                {moment(posts.created_at).format("DD-MM-YYYY HH:mm")}
                               </p>
                               <p className="creationDate">
                                 Atualizado em:{" "}
-                                {moment(posts.updated).format("DD-MM-YYYY HH:mm")}
+                                {moment(posts.updated_at).format("DD-MM-YYYY HH:mm")}
                               </p>
                             </Grid>
                             <Grid item xs={4} color="green" fontWeight={"bold"}>

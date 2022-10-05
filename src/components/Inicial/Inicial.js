@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar";
-import LastFivePosts from "../Miscelaneous/LastPosts/LastFivePosts";
+import LastFivePostsCreated from "../Miscelaneous/LastPosts/LastFivePostsCreated";
 import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
 import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
 import Destaques from "../Miscelaneous/LastPosts/Destaques";
@@ -58,7 +58,7 @@ function Inicial() {
           </Grid>
           <Grid item xs={4}>
             <Box>
-              <LastFivePosts />
+              <LastFivePostsCreated />
             </Box>
           </Grid>
           <Grid item xs={4}>

@@ -53,10 +53,10 @@ function Read() {
                                 <Grid container spacing={2}>
                                     <Grid item xs={8}>
                                         <p className="creationDate">
-                                            Publicado em: {moment(edital.created).format("DD-MM-YYYY HH:mm")}
+                                            Publicado em: {moment(edital.created_at).format("DD/MM/YYYY HH:mm")}
                                         </p>
                                         <p className="creationDate">
-                                            Atualizado em: {moment(edital.updated).format("DD-MM-YYYY HH:mm")}
+                                            Atualizado em: {moment(edital.updated_at).format("DD/MM/YYYY HH:mm")}
                                         </p>
                                     </Grid>
                                     <Grid item xs={4}>
