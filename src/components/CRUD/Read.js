@@ -5,8 +5,8 @@ import { AiFillDelete, AiFillStar } from "react-icons/ai";
 import { RiPencilFill } from "react-icons/ri";
 import moment from "moment";
 import Delete from "../CRUD/Delete";
-import Update from "../CRUD/Update";
 import Favoritar from "../CRUD/Favoritar";
+import { Link } from 'react-router-dom';
 import {
     Card,
     CardContent,
@@ -23,7 +23,7 @@ function Read() {
     const [edital, setEdital] = useState([]);
     const { id } = useParams();
     const fetchEdital = async () => {
-        const response = await fetch(`http://localhost:5000/api/editais/${id}`);
+        const response = await fetch(`http://localhost:2300/api/editais/${id}`);
         const edital = await response.json();
         setEdital(edital);
     };
@@ -31,6 +31,14 @@ function Read() {
     useEffect(() => {
         fetchEdital();
     });
+
+    const setData = (edital) => {
+        let { _id, title, content, label } = edital;
+        localStorage.setItem('ID', _id);
+        localStorage.setItem('Title', title);
+        localStorage.setItem('Content', content);
+        localStorage.setItem('Label', label)
+}
 
     return (
         <>
@@ -60,7 +68,7 @@ function Read() {
                                         </p>
                                     </Grid>
                                     <Grid item xs={4}>
-                                        <p className="creationDate">Status: OK </p>
+                                        <p className="creationDate">{edital.status}</p>
                                     </Grid>
                                 </Grid>
                                 <Box>
@@ -79,15 +87,15 @@ function Read() {
                                                                 <th>Detalhe</th>
                                                             </tr>
                                                             <tr>
-                                                                <td>{moment(etapa.primeiraEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td>{moment(etapa.primeiraEtapa.data).format("DD/MM/YYYY")}</td>
                                                                 <td> {etapa.primeiraEtapa.nome}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>{moment(etapa.segundaEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td>{moment(etapa.segundaEtapa.data).format("DD/MM/YYYY")}</td>
                                                                 <td> {etapa.segundaEtapa.nome}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>{moment(etapa.terceiraEtapa.data).format("DD-MM-YYYY")}</td>
+                                                                <td>{moment(etapa.terceiraEtapa.data).format("DD/MM/YYYY")}</td>
                                                                 <td> {etapa.terceiraEtapa.nome}</td>
                                                             </tr>
                                                         </table>
@@ -101,9 +109,16 @@ function Read() {
                             </CardContent>
                             <div className="card-buttons">
                                 <CardActions>
-                                    <Button size="large" onClick={(e) => Update(e)}>
-                                        <RiPencilFill />
-                                    </Button>
+                                    <Link
+                                        key={edital.id}
+                                        to={{
+                                            pathname: `/editais/edit/${edital._id}`
+                                        }}
+                                    >
+                                        <Button size="large" onClick={() => setData(edital)}>
+                                            <RiPencilFill />
+                                        </Button>
+                                    </Link>
                                     <Button size="large" onClick={(e) => Delete(edital._id, e)}>
                                         <AiFillDelete />
                                     </Button>

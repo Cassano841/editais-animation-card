@@ -16,7 +16,7 @@ function ModeloCalendario({ evento }) {
         <AlertTitle>
           {moment(evento.dataEvento).format("DD/MMMM/YYYY")}
         </AlertTitle>
-        {evento.titulo}
+        {evento.title}
       </Alert>
     </Paper>
   );

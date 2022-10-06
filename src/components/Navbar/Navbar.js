@@ -59,12 +59,11 @@ export default function PrimarySearchAppBar() {
                 href="/cadastro"
                 size="large"
                 edge="end"
-                aria-label="account of current user"
                 aria-haspopup="true"
                 color="inherit"
-                alt="Criar novo edital"
+                alt="Cadastros"
               >
-                <Chip icon={<AddCircle />} label="Criação de Editais"/>
+                <Chip icon={<AddCircle />} label="Cadastros"/>
               </IconButton>
             </Box>
             <Box>

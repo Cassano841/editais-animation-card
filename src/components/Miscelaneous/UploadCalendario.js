@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRef } from "react";
 
-function Upload() {
+function UploadCalendario() {
 
     const fileElement = useRef(null);
 
@@ -14,7 +14,7 @@ function Upload() {
         if (fileElement === null) {
             alert("Carregar arquivo antes de realizar o upload");
         } else {
-            axios.post("http://localhost:2300/uploadEditais", dataForm)
+            axios.post("http://localhost:2300/uploadCalendario", dataForm)
                 .then((res) => {
                     console.log(res.statusText);
                 })
@@ -28,12 +28,11 @@ function Upload() {
             <div className="header-titulo">
                 <form>
                     <input type={"file"} name="file" ref={fileElement} />
-                    <button onClick={handleUpload}>Upload</button>
+                    <button onClick={handleUpload}>Upload Calendario</button>
                 </form>
-
             </div>
         </div>
     );
 }
 
-export default Upload;
+export default UploadCalendario;

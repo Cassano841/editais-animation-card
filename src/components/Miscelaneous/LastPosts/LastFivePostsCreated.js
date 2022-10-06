@@ -2,20 +2,18 @@ import "./LastFivePosts.css";
 import { useEffect, useState } from "react";
 import {
   Grid,
-  Card,
   Typography,
-  CardActionArea,
-  CardContent,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import moment from "moment";
+import PostModelo from "../../Posts/PostModelo";
+
 
 function LastFivePosts() {
   const [posts, setPosts] = useState([]);
 
   const fetchLastFivePosts = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/editais/lastFivePostsCreated"
+      "http://localhost:2300/api/editais/lastFivePostsCreated"
     );
     const data = await response.json();
     setPosts(data);
@@ -27,7 +25,7 @@ function LastFivePosts() {
 
   return (
     <>
-      <div>
+      <div className="lastFiveCreated">
         <main>
           <Grid
             sx={{
@@ -35,45 +33,19 @@ function LastFivePosts() {
             }}
           >
             <Box>
-              <Typography variant="h5">Últimos 5 Ediais Publicados</Typography>
+              <Typography variant="h5">5 Últimos Editais Criados</Typography>
             </Box>
+            <br />
             <Box>
-              <Grid>
-                {posts.map((posts) => (
-                  <Grid>
-                    <Card
-                      sx={{ maxWidth: 600, margin: "5px", border: "2px solid" }}
-                      
-                    >
-                      <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            {posts.title}
-                          </Typography>
-                          <Grid container spacing={2}>
-                            <Grid item xs={4}>
-                              <p className="creationDate">
-                                Publicado em:{" "}
-                                {moment(posts.created_at).format("DD-MM-YYYY HH:mm")}
-                              </p>
-                              <p className="creationDate">
-                                Atualizado em:{" "}
-                                {moment(posts.updated_at).format("DD-MM-YYYY HH:mm")}
-                              </p>
-                            </Grid>
-                            <Grid item xs={4} color="green" fontWeight={"bold"}>
-                              <p className="creationDate">
-                                Categoria: {posts.label}
-                              </p>
-                            </Grid>
-                            <Grid item xs={4} color="red" fontWeight={"bold"}>
-                              <p className="creationDate">Status: Vigente</p>
-                            </Grid>
-                          </Grid>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </Grid>
+              <Grid
+                container
+                spacing={1}
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+              >
+                {posts.map((post) => (
+                  <PostModelo key={post._id} post={post} />
                 ))}
               </Grid>
             </Box>

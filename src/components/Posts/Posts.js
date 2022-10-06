@@ -6,7 +6,6 @@ import { CircularProgress, Grid } from "@mui/material";
 import FilterEdital from "../Filter/FilterEdital";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -16,7 +15,7 @@ function Posts() {
   //const [search, setSearch] = useState(""); <<== Revisar e utilizar este
 
   const fetchPosts = async () => {
-    const response = await fetch("http://localhost:5000/api/editais");
+    const response = await fetch("http://localhost:2300/api/editais");
     const data = await response.json();
     setPosts(data);
     //setFiltered(data);
@@ -30,7 +29,6 @@ function Posts() {
     <>
     <div className="conteudo">
       <Navbar />
-      <InConstruction/>
       <FilterEdital
         posts={posts}
         setFiltered={setFiltered}

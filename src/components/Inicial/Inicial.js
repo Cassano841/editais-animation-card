@@ -1,9 +1,8 @@
 import Navbar from "../Navbar/Navbar";
 import LastFivePostsCreated from "../Miscelaneous/LastPosts/LastFivePostsCreated";
 import LastFivePostsUpdated from "../Miscelaneous/LastPosts/LastFivePostsUpdated";
-import LoremIpsun from "../Miscelaneous/LoremIpsum/LoremIpsum";
 import Destaques from "../Miscelaneous/LastPosts/Destaques";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 function Inicial() {
@@ -47,26 +46,9 @@ function Inicial() {
             </Typography>
           </Box>
         </Container>
-
         <Destaques />
-
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <Box>
-              <LoremIpsun />
-            </Box>
-          </Grid>
-          <Grid item xs={4}>
-            <Box>
-              <LastFivePostsCreated />
-            </Box>
-          </Grid>
-          <Grid item xs={4}>
-            <Box>
-              <LastFivePostsUpdated />
-            </Box>
-          </Grid>
-        </Grid>
+        <LastFivePostsCreated />
+        <LastFivePostsUpdated />
       </main>
     </>
   );

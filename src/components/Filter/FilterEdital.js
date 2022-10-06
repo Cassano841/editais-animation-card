@@ -3,6 +3,8 @@ import "./Filter.css";
 import { Button, Stack } from "@mui/material";
 
 function Filter({ setActiveButton, activeButton, setFiltered, posts }) {
+
+
   useEffect(() => {
     if (activeButton === "all") {
       setFiltered(posts);

@@ -41,7 +41,7 @@ export default function Create() {
       alert("É necessário preencher todos os campos para criação do edital!")
       window.location.reload(false);
     } else {
-      axios.post("http://localhost:5000/api/editais", {
+      axios.post("http://localhost:2300/api/editais", {
         title,
         content,
         label,

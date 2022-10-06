@@ -4,16 +4,15 @@ import { Grid } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
 //import FilterEvento from "../Filter/FilterEvento"
 import Footer from "../Footer/Footer";
-import InConstruction from "../Miscelaneous/InConstruction/InConstruction";
 import ModeloCalendario from "../OrganizacaoAgenda/ModeloCalendario";
-import FilterEvento from "../Filter/FilterEvento";
+//import FilterEvento from "../Filter/FilterEvento";
 import "./CalendarioLista.css";
 
 function CalendarioLista() {
   const [eventos, setEventos] = useState([]);
 
   const fetchCalendarioLista = async () => {
-    const response = await fetch("http://localhost:5000/api/eventos");
+    const response = await fetch("http://localhost:2300/api/eventos");
     const data = await response.json();
     setEventos(data);
 
@@ -29,8 +28,6 @@ function CalendarioLista() {
         <Navbar />
       </div>
       <div className="conteudo">
-        <InConstruction />
-      
         <motion.div className="posts-list" layout>
           <Grid
             container

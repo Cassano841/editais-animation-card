@@ -12,7 +12,7 @@ function Destaques() {
 
   const fetchDestaques = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/editais/destaques"
+      "http://localhost:2300/api/editais/destaques"
     );
     const data = await response.json();
     setEditais(data);

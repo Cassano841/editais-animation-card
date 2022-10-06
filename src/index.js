@@ -13,7 +13,7 @@ import Inicial from "./components/Inicial/Inicial";
 import Posts from "./components/Posts/Posts";
 import FAQ from "./components/Inicial/FAQ";
 import Read from "./components/CRUD/Read";
-//import Update from "./components/CRUD/Update";
+import Update from "./components/CRUD/Update";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +29,8 @@ root.render(
         <Route path="/editais" element={<Posts/>}/>
         <Route path="/faq" element={<FAQ/>}/>
         <Route path="/editais/:id" element={<Read/>}/>
+        <Route path="/editais/edit/:id" element={<Update />}/>
+
         <Route
            path="*"
           element={
